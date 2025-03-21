@@ -24,6 +24,14 @@ final class LinearSearch {
      */
     private static final int NUMBER_BRACKET = 1;
     /**
+     * This is the number of random numbers to generate in each line.
+     */
+    private static final int AMOUNT_NUMBER = 10;
+    /**
+     * This is the maximum amount of random numbers to generate.
+     */
+    private static final int MAXIMUM_AMOUNT = 101;
+    /**
      * This is the main method to run the program.
      * @param args
      */
@@ -37,13 +45,14 @@ final class LinearSearch {
         do {
             try {
                 // Create an array to hold the random numbers
-                int[][] randomNumbers = new int[NUMBER_BRACKET][10];
+                int[][] randomNumbers = new int[NUMBER_BRACKET][AMOUNT_NUMBER];
                 // Generate random numbers and fill the array
                 for (int lines = 0; lines < NUMBER_BRACKET; lines++) {
                     // Fill each line with 10 random numbers
-                    for (int numBracket = 0; numBracket < 10; numBracket++) {
-                        randomNumbers[lines][numBracket]
-                         = rand.nextInt(101); // Random number between 0 and 100
+                    for (int numBracket = 0; numBracket < AMOUNT_NUMBER;
+                     numBracket++) {
+                        randomNumbers[lines][numBracket] = rand.nextInt(
+                            MAXIMUM_AMOUNT); // Random number between 0 and 100
                     }
                 }
                 // Sort the first line of random numbers
